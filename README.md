@@ -10,8 +10,8 @@ npm install;
 DEBUG=myapp npm start
 ```
 
-Now your http://0.0.0.0/mip is responding to GET request.  
-现在向 http://0.0.0.0/mip 发请求，能够得到数据了。
+Now your http://0.0.0.0:3000/mip is responding to GET request.  
+现在向 http://0.0.0.0:3000/mip 发请求，能够得到数据了。
 
 ## Manipulate With Data 修改数据
 The json file is in `/public/json/infinite.json`, edit and you'll get customized data.  
