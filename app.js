@@ -17,22 +17,26 @@ app.get('/mip', function (req, res) {
 	var json = require('./public/json/infinite.json');
 	// 创建返回数组, 如要获取第2页数据，就是下标第6-11条
 	var itemArr = []; 
-	// for (var i = 0; i < itemsPerPage; i++) {
-	// 	var currentIndex = (currentPage - 1) * 6 + i;
-	// 	// 保证获取数据的 index 不大于数据总条数
-	// 	if(currentIndex < json.length) {
-	// 		json[currentIndex]["index"] = currentIndex + 1;
-	// 		itemArr.push(json[currentIndex]);
-	// 	}
-	// }
-	// 创建返回值
-	// res.jsonp({
-	//     status: 0, 
-	//     data: { 
-	//         items: itemArr
-	//     }
-	// });
-	res.jsonp(json);
+	for (var i = 0; i < itemsPerPage; i++) {
+		var currentIndex = (currentPage - 1) * 6 + i;
+		// 保证获取数据的 index 不大于数据总条数
+		if(currentIndex < json.length) {
+			json[currentIndex]["index"] = currentIndex + 1;
+			itemArr.push(json[currentIndex]);
+		}
+	}
+	// 返回分页后的数据
+	// return paged data.
+	res.jsonp({
+	    status: 0, 
+	    data: { 
+	        items: itemArr
+	    }
+	});
+
+	// if you need all data at once, uncomment this:
+	// 一次返回所有数据，解除下一行的注释。
+	// res.jsonp(json);
 });
 
 // view engine setup

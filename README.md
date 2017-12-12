@@ -16,3 +16,6 @@ Now your http://0.0.0.0:3000/mip is responding to GET request.
 ## Manipulate With Data 修改数据
 The json file is in `/public/json/infinite.json`, edit and you'll get customized data.  
 数据存放在`/public/json/infinite.json`，修改后重新启动，就可以获取新数据了。
+
+## 中文创建过程
+http://www.jianshu.com/p/26262bea32e6
